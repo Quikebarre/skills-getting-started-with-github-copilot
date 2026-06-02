@@ -12,30 +12,32 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f5f5f5;
+  background: radial-gradient(circle at top left, #eef2ff 0%, #f9f9fb 35%, #f5f5f5 100%);
 }
 
 header {
   text-align: center;
-  padding: 20px 0;
+  padding: 28px 20px;
   margin-bottom: 30px;
-  background-color: #1a237e;
+  background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
   color: white;
-  border-radius: 5px;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(26, 35, 126, 0.15);
 }
 
 header h1 {
   margin-bottom: 10px;
+  letter-spacing: 0.03em;
 }
 
 main {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 30px;
-  justify-content: center;
+  justify-items: center;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   main {
     grid-template-columns: 2fr 1fr;
   }
@@ -43,40 +45,112 @@ main {
 
 section {
   background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 26px;
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(32, 40, 80, 0.08);
   width: 100%;
-  max-width: 500px;
+  max-width: 540px;
 }
 
 section h3 {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #e6e8f0;
   color: #1a237e;
+  font-size: 1.2rem;
 }
 
 .activity-card {
-  margin-bottom: 15px;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+  margin-bottom: 18px;
+  padding: 22px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #f7f8ff 100%);
+  border: 1px solid rgba(58, 70, 122, 0.12);
+  box-shadow: 0 14px 32px rgba(67, 77, 145, 0.08);
 }
 
 .activity-card h4 {
-  margin-bottom: 10px;
-  color: #0066cc;
+  margin-bottom: 12px;
+  color: #243a8f;
+  font-size: 1.15rem;
 }
 
 .activity-card p {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  color: #4a5568;
+}
+
+.participants-area {
+  margin-top: 18px;
+}
+
+.participants-area p {
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #1f2d5a;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.9rem;
+}
+
+.participants-list {
+  list-style: none;
+  margin-top: 8px;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.participant-item {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background-color: #eef3ff;
+  border: 1px solid #d8e2ff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 0.94rem;
+  color: #243a8f;
+  max-width: fit-content;
+  gap: 10px;
+}
+
+.participant-name {
+  display: inline-block;
+}
+
+.participant-remove {
+  border: none;
+  background: rgba(36, 58, 143, 0.1);
+  color: #243a8f;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+.participant-remove:hover {
+  background: rgba(36, 58, 143, 0.18);
+  transform: scale(1.05);
+}
+
+.participant-item.empty {
+  color: #7a7f90;
+  background-color: transparent;
+  border: 1px dashed #d6d8e6;
+  font-style: italic;
+  padding: 10px 14px;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
+
 
 .form-group label {
   display: block;
@@ -97,21 +171,24 @@ button {
   background-color: #1a237e;
   color: white;
   border: none;
-  padding: 10px 15px;
+  padding: 12px 18px;
   font-size: 16px;
-  border-radius: 5px;
+  border-radius: 999px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 10px 20px rgba(26, 35, 126, 0.14);
 }
 
 button:hover {
   background-color: #3949ab;
+  transform: translateY(-1px);
 }
 
 .message {
   margin-top: 20px;
-  padding: 10px;
-  border-radius: 4px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-weight: 600;
 }
 
 .success {
